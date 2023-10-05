@@ -1,14 +1,36 @@
-[gd_scene load_steps=3 format=3 uid="uid://w5klhucye2np"]
+[gd_scene load_steps=6 format=3 uid="uid://w5klhucye2np"]
 
-[ext_resource type="Script" path="res://Enemy.gd" id="1_56ubt"]
-[ext_resource type="PackedScene" uid="uid://dymqbospl8sye" path="res://Ninja_Male.gltf" id="1_gacji"]
+[ext_resource type="Script" path="res://scripts/Enemy.gd" id="1_56ubt"]
+[ext_resource type="PackedScene" uid="uid://dymqbospl8sye" path="res://assets/Ninja_Male.gltf" id="1_gacji"]
+[ext_resource type="Script" path="res://scripts/EnemyFOV.gd" id="3_732kj"]
+[ext_resource type="PackedScene" uid="uid://d0yyuc8m2nllo" path="res://assets/target.gltf" id="4_iaw2i"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nd6wn"]
+size = Vector3(1, 3, 1)
 
 [node name="EnemyScene" type="Node3D"]
 
 [node name="Enemy" type="CharacterBody3D" parent="."]
+unique_name_in_owner = true
 script = ExtResource("1_56ubt")
 
 [node name="Pivot" type="Node3D" parent="Enemy"]
 
 [node name="CultMember" parent="Enemy/Pivot" instance=ExtResource("1_gacji")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.442354, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.31148, 0.45747)
+shape = SubResource("BoxShape3D_nd6wn")
+
+[node name="RayCast3D" type="RayCast3D" parent="Enemy"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.192399, 1.85485, 0)
+target_position = Vector3(0, -1, 100)
+script = ExtResource("3_732kj")
+
+[node name="Node3D" type="Node3D" parent="Enemy"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.12924, 0)
+
+[node name="Target" parent="Enemy" instance=ExtResource("4_iaw2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.07, 0)
+visible = false
