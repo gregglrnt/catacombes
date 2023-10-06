@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://3inn2imk6ytt"]
+[gd_scene load_steps=5 format=3 uid="uid://3inn2imk6ytt"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_dg2ty"]
 [ext_resource type="PackedScene" uid="uid://drg66phrnq4jy" path="res://assets/Casual_Male.gltf" id="2_s5tta"]
+[ext_resource type="Script" path="res://scripts/CameraFollow.gd" id="3_p77my"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_x2of2"]
 radius = 1.5
@@ -45,6 +46,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.749381, 1.27287, -0.410356
 shape = SubResource("SphereShape3D_x2of2")
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
-transform = Transform3D(0.999404, -0.0100984, 0.0330055, 0.00237405, 0.97409, 0.226147, -0.0344341, -0.225933, 0.973534, 0, 3.14022, 5.66365)
+transform = Transform3D(-0.996585, -0.0163619, 0.0809384, 0.0220069, 0.892097, 0.451308, -0.0795892, 0.451548, -0.88869, -0.663014, 3.53359, -3.87956)
+script = ExtResource("3_p77my")
 
 [editable path="Player/Pivot/Casual_Male"]

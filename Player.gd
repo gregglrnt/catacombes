@@ -16,13 +16,13 @@ func _physics_process(delta):
 		return
 
 	var direction = Vector3.ZERO
-	if Input.is_action_pressed("move_right"):
-		direction.x += 1
 	if Input.is_action_pressed("move_left"):
+		direction.x += 1
+	if Input.is_action_pressed("move_right"):
 		direction.x -= 1
-	if Input.is_action_pressed("move_back"):
-		direction.z += 1
 	if Input.is_action_pressed("move_forward"):
+		direction.z += 1
+	if Input.is_action_pressed("move_back"):
 		direction.z -= 1
 	if is_on_floor() and Input.is_action_pressed("jump"):
 		target_velocity.y = jump_impulse
