@@ -94,8 +94,9 @@ mesh = SubResource("BoxMesh_g4d2x")
 [node name="Enemy2Path" type="Path3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15.5266)
 curve = SubResource("Curve3D_1glxs")
+script = ExtResource("2_pvkgk")
 
 [node name="Enemy2PathFollow" type="PathFollow3D" parent="Enemy2Path"]
+transform = Transform3D(-0.0845155, 0, -0.996422, 0, 1, 0, 0.996422, 0, -0.0845155, -12.4524, 0, -10.0074)
 
 [node name="Enemy2" parent="Enemy2Path/Enemy2PathFollow" instance=ExtResource("2_no0s2")]
-script = ExtResource("2_pvkgk")
