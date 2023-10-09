@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://ci6qg7t1dmmmu"]
+[gd_scene load_steps=57 format=3 uid="uid://ci6qg7t1dmmmu"]
 
 [ext_resource type="PackedScene" uid="uid://3inn2imk6ytt" path="res://player.tscn" id="1_7xctj"]
 [ext_resource type="PackedScene" uid="uid://dv7qvyot2ov10" path="res://static_body_3d.tscn" id="2_doeps"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bifhdwotmixt1" path="res://assets/door_gate.gltf.glb" id="5_p46i8"]
 [ext_resource type="PackedScene" uid="uid://dgltt0fiod214" path="res://assets/wallCorner.gltf.glb" id="6_1s25b"]
 [ext_resource type="PackedScene" uid="uid://6wevh4jxjmeo" path="res://assets/door.gltf.glb" id="8_n8esw"]
+[ext_resource type="PackedScene" uid="uid://bqso8wq3uldv6" path="res://assets/floorDecoration_tilesLarge.gltf.glb" id="9_0yqql"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sac6i"]
 sky_top_color = Color(0.0745098, 0.486275, 0.658824, 1)
@@ -167,7 +168,7 @@ transform = Transform3D(10.5247, 9.09495e-12, -7.45058e-09, 2.91038e-11, 0.98829
 shape = SubResource("BoxShape3D_lktsm")
 
 [node name="PlayerScene" parent="." instance=ExtResource("1_7xctj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 12)
 
 [node name="GridMap4" type="GridMap" parent="."]
 mesh_library = ExtResource("3_7dob6")
@@ -428,7 +429,7 @@ shape = SubResource("BoxShape3D_w6bv2")
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, 7.80638, -3.95, 24.9641)
 
 [node name="wall_gltf21" parent="StaticBody3D23" instance=ExtResource("3_m787y")]
-transform = Transform3D(1, 0, -3.55271e-15, 0, 1, 0, 3.55271e-15, 0, 1, 0, 0, 0)
+transform = Transform3D(1, 0, -7.10543e-15, 0, 1, 0, 7.10543e-15, 0, 1, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D23"]
 transform = Transform3D(5, 0, -4.26326e-14, 0, 8, 0, 1.27898e-13, 0, 1.5, -2.35566, 0.0460291, -0.0326958)
@@ -709,3 +710,156 @@ shape = SubResource("BoxShape3D_4bjqm")
 
 [node name="door_gltf" parent="." instance=ExtResource("8_n8esw")]
 transform = Transform3D(2.2, 0, 0, 0, 2.5, 0, 0, 0, 1.5, 19.275, -2.93787, 40.6544)
+
+[node name="floorDecoration_tilesLarge_gltf" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.47205, -3.01669, 7.28103)
+
+[node name="floorDecoration_tilesLarge_gltf9" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.28414, -3.01669, 7.28103)
+
+[node name="floorDecoration_tilesLarge_gltf23" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.53071, -3.01669, 7.28103)
+
+[node name="floorDecoration_tilesLarge_gltf10" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.28414, -3.01669, 13.0102)
+
+[node name="floorDecoration_tilesLarge_gltf22" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.04667, -3.01669, 13.0102)
+
+[node name="floorDecoration_tilesLarge_gltf47" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1291, -3.01669, 13.0102)
+
+[node name="floorDecoration_tilesLarge_gltf48" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.8192, -3.01669, 13.0102)
+
+[node name="floorDecoration_tilesLarge_gltf49" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5314, -3.01669, 13.0102)
+
+[node name="floorDecoration_tilesLarge_gltf50" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.3835, -3.01669, 13.0102)
+
+[node name="floorDecoration_tilesLarge_gltf51" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.9161, -3.01669, 7.35962)
+
+[node name="floorDecoration_tilesLarge_gltf11" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.28414, -3.01669, 18.7377)
+
+[node name="floorDecoration_tilesLarge_gltf21" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.55733, -3.01669, 18.7377)
+
+[node name="floorDecoration_tilesLarge_gltf43" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1225, -3.01669, 18.7377)
+
+[node name="floorDecoration_tilesLarge_gltf44" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7859, -3.01669, 18.7377)
+
+[node name="floorDecoration_tilesLarge_gltf45" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.4733, -3.01669, 18.7377)
+
+[node name="floorDecoration_tilesLarge_gltf46" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1, 27.7743, -3.01669, 18.7377)
+
+[node name="floorDecoration_tilesLarge_gltf12" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.28414, -3.01669, 24.2808)
+
+[node name="floorDecoration_tilesLarge_gltf24" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.92843, -3.01669, 24.2808)
+
+[node name="floorDecoration_tilesLarge_gltf39" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4916, -3.01669, 24.2808)
+
+[node name="floorDecoration_tilesLarge_gltf40" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2405, -3.01669, 24.2808)
+
+[node name="floorDecoration_tilesLarge_gltf41" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.564, -3.01669, 24.2808)
+
+[node name="floorDecoration_tilesLarge_gltf42" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.648, -3.01669, 24.2808)
+
+[node name="floorDecoration_tilesLarge_gltf13" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.28414, -3.01669, 29.9892)
+
+[node name="floorDecoration_tilesLarge_gltf25" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.96795, -3.01669, 29.9892)
+
+[node name="floorDecoration_tilesLarge_gltf35" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5943, -3.01669, 29.9892)
+
+[node name="floorDecoration_tilesLarge_gltf36" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2424, -3.01669, 29.9892)
+
+[node name="floorDecoration_tilesLarge_gltf37" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.8966, -3.01669, 29.9892)
+
+[node name="floorDecoration_tilesLarge_gltf38" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.6668, -3.01669, 29.9892)
+
+[node name="floorDecoration_tilesLarge_gltf14" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.28414, -3.01669, 35.7335)
+
+[node name="floorDecoration_tilesLarge_gltf26" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.70106, -3.01669, 35.7335)
+
+[node name="floorDecoration_tilesLarge_gltf31" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5052, -3.01669, 35.7335)
+
+[node name="floorDecoration_tilesLarge_gltf32" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.1311, -3.01669, 35.7335)
+
+[node name="floorDecoration_tilesLarge_gltf33" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.8206, -3.01669, 35.7335)
+
+[node name="floorDecoration_tilesLarge_gltf34" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.4061, -3.01669, 35.7335)
+
+[node name="floorDecoration_tilesLarge_gltf15" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.28414, -3.01669, 41.4869)
+
+[node name="floorDecoration_tilesLarge_gltf27" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.89612, -3.01669, 41.4869)
+
+[node name="floorDecoration_tilesLarge_gltf16" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.28414, -3.01669, 47.2223)
+
+[node name="floorDecoration_tilesLarge_gltf17" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.00738, -3.01669, 47.2223)
+
+[node name="floorDecoration_tilesLarge_gltf18" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.7631, -3.01669, 47.2223)
+
+[node name="floorDecoration_tilesLarge_gltf28" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.7631, -3.01669, 41.5743)
+
+[node name="floorDecoration_tilesLarge_gltf19" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.4571, -3.01669, 47.2223)
+
+[node name="floorDecoration_tilesLarge_gltf29" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.4571, -3.01669, 41.538)
+
+[node name="floorDecoration_tilesLarge_gltf20" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.7302, -3.01669, 47.2223)
+
+[node name="floorDecoration_tilesLarge_gltf30" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.7302, -3.01669, 41.5086)
+
+[node name="floorDecoration_tilesLarge_gltf2" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.47205, -3.01669, 13.0775)
+
+[node name="floorDecoration_tilesLarge_gltf3" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.47205, -3.01669, 18.8677)
+
+[node name="floorDecoration_tilesLarge_gltf4" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.47205, -3.01669, 24.55)
+
+[node name="floorDecoration_tilesLarge_gltf5" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.47205, -3.01669, 30.3064)
+
+[node name="floorDecoration_tilesLarge_gltf6" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.47205, -3.01669, 36.0821)
+
+[node name="floorDecoration_tilesLarge_gltf7" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.47205, -3.01669, 41.8093)
+
+[node name="floorDecoration_tilesLarge_gltf8" parent="." instance=ExtResource("9_0yqql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.47205, -3.01669, 46.4413)
