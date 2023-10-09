@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ci6qg7t1dmmmu"]
+[gd_scene load_steps=56 format=3 uid="uid://ci6qg7t1dmmmu"]
 
 [ext_resource type="PackedScene" uid="uid://3inn2imk6ytt" path="res://player.tscn" id="1_7xctj"]
 [ext_resource type="PackedScene" uid="uid://dv7qvyot2ov10" path="res://static_body_3d.tscn" id="2_doeps"]
@@ -51,11 +51,97 @@ fog_density = 0.001
 [sub_resource type="BoxShape3D" id="BoxShape3D_lktsm"]
 size = Vector3(48.2826, 1, 72.301)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_6tu1a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n74ct"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h5r23"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nx0hy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_utnsx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g3gat"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d5xp2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f0eam"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o2vn3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6h3vu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tnha7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e0bwx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e0bav"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q2xb6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8ndr2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_atfaf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xmrso"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w6bv2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1nhg8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mmwqo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nkcfv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ejdx3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_71gpg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pp8p3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b3phd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0gfes"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pqb6b"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qsuu2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yciak"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0q2pv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hst28"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1ntls"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hbyg7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4ytfl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k4i70"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x7rrs"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nks23"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lq27k"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tt2o1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_53p3w"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bpjkr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1e0io"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4bjqm"]
+
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.79957, 7.66016, -1.26396)
 
 [node name="ground2" parent="." instance=ExtResource("2_doeps")]
-transform = Transform3D(2.54, 0, 0, 0, 49.9956, -0.0940108, 0, 0.665799, 7.05937, 1.1617, -4.53785, 39.6771)
+transform = Transform3D(2.54, 0, 0, 0, 49.9956, -0.0940108, 0, 0.665799, 7.05937, 1.1617, -4.53785, 39.8098)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_tq4cp")
@@ -96,11 +182,23 @@ transform = Transform3D(1.5, 0, 0, 0, 2, 0, 0, 0, 1.5, -2.17765, -2.44185, 18.33
 [node name="door_gate_gltf2" parent="." instance=ExtResource("5_p46i8")]
 transform = Transform3D(1.5, 0, 0, 0, 2, 0, 0, 0, 1.5, 27.2059, -2.44185, 11.0442)
 
-[node name="wallCorner_gltf" parent="." instance=ExtResource("6_1s25b")]
+[node name="StaticBody3D9" type="StaticBody3D" parent="."]
 transform = Transform3D(-1, 0, -1.50996e-07, 0, 1.5, 0, 1.50996e-07, 0, -1, -8.05, -3.95, 18.2262)
 
-[node name="wallCorner_gltf5" parent="." instance=ExtResource("6_1s25b")]
+[node name="wallCorner_gltf" parent="StaticBody3D9" instance=ExtResource("6_1s25b")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D9"]
+transform = Transform3D(5, 0, 0, 0, 8, 0, 0, 0, 1, -1.81858, 0, 0.243412)
+shape = SubResource("BoxShape3D_6tu1a")
+
+[node name="StaticBody3D25" type="StaticBody3D" parent="."]
 transform = Transform3D(-1, 0, -1.50996e-07, 0, 1.5, 0, 1.50996e-07, 0, -1, -8.05, -3.95, 40.8806)
+
+[node name="wallCorner_gltf5" parent="StaticBody3D25" instance=ExtResource("6_1s25b")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D25"]
+transform = Transform3D(2.5, 0, 0, 0, 8, 0, 0, 0, 1.5, -0.756344, 0, 0)
+shape = SubResource("BoxShape3D_n74ct")
 
 [node name="wallCorner_gltf7" parent="." instance=ExtResource("6_1s25b")]
 transform = Transform3D(-1, 0, -1.50996e-07, 0, 1.5, 0, 1.50996e-07, 0, -1, -8.05, -3.95, 50.361)
@@ -111,17 +209,36 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1.5, 0, 1, 0, -4.37114e-08, 24.2
 [node name="wallCorner_gltf10" parent="." instance=ExtResource("6_1s25b")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1.5, 0, 1, 0, -4.37114e-08, 32.1719, -3.95, 38.4284)
 
-[node name="wallCorner_gltf11" parent="." instance=ExtResource("6_1s25b")]
+[node name="StaticBody3D41" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 32.1719, -3.95, 11.1858)
+
+[node name="wallCorner_gltf11" parent="StaticBody3D41" instance=ExtResource("6_1s25b")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D41"]
+transform = Transform3D(2, 0, 0, 0, 8, 0, 0, 0, 1.5, -0.970024, 0, 0)
+shape = SubResource("BoxShape3D_h5r23")
 
 [node name="wallCorner_gltf6" parent="." instance=ExtResource("6_1s25b")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1.5, 0, 1, 0, -4.37114e-08, 7.78547, -3.95, 40.8806)
 
-[node name="wall_gltf" parent="." instance=ExtResource("3_m787y")]
+[node name="StaticBody3D10" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -4.1, -3.91, 18.2494)
 
-[node name="wall_gltf28" parent="." instance=ExtResource("3_m787y")]
+[node name="wall_gltf" parent="StaticBody3D10" instance=ExtResource("3_m787y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0958972, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D10"]
+transform = Transform3D(5, 0, 0, 0, 8, 0, 0, 0, 1.5, -0.555088, 0, 0.00452232)
+shape = SubResource("BoxShape3D_nx0hy")
+
+[node name="StaticBody3D27" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -4.04858, -3.91, 50.324)
+
+[node name="wall_gltf28" parent="StaticBody3D27" instance=ExtResource("3_m787y")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D27"]
+transform = Transform3D(20, 0, 0, 0, 8, 0, 0, 0, 1.5, 5.2884, 0, 0)
+shape = SubResource("BoxShape3D_utnsx")
 
 [node name="wall_gltf29" parent="." instance=ExtResource("3_m787y")]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -0.0672526, -3.91, 50.278)
@@ -132,8 +249,14 @@ transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 3.91551, -3.92852, 50.257)
 [node name="wall_gltf31" parent="." instance=ExtResource("3_m787y")]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 7.90188, -3.92852, 50.2763)
 
-[node name="wall_gltf32" parent="." instance=ExtResource("3_m787y")]
+[node name="StaticBody3D28" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 11.7511, -3.92852, 50.2633)
+
+[node name="wall_gltf32" parent="StaticBody3D28" instance=ExtResource("3_m787y")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D28"]
+transform = Transform3D(14, 0, 0, 0, 8, 0, 0, 0, 1.5, 6.25967, 0, 0)
+shape = SubResource("BoxShape3D_g3gat")
 
 [node name="wall_gltf34" parent="." instance=ExtResource("3_m787y")]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 15.6885, -3.92852, 50.2536)
@@ -141,8 +264,14 @@ transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 15.6885, -3.92852, 50.2536)
 [node name="wall_gltf35" parent="." instance=ExtResource("3_m787y")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1, 19.6124, -3.92852, 50.2606)
 
-[node name="wall_gltf33" parent="." instance=ExtResource("3_m787y")]
+[node name="StaticBody3D30" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 10.4454, -3.92852, 40.8814)
+
+[node name="wall_gltf33" parent="StaticBody3D30" instance=ExtResource("3_m787y")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D30"]
+transform = Transform3D(11.5, 0, 0, 0, 8, 0, 0, 0, 1.5, 3.04602, 0, 0)
+shape = SubResource("BoxShape3D_d5xp2")
 
 [node name="wall_gltf36" parent="." instance=ExtResource("3_m787y")]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 14.3203, -3.92852, 40.8814)
@@ -156,23 +285,58 @@ transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 25.1937, -3.92852, 11.128)
 [node name="wall_gltf56" parent="." instance=ExtResource("3_m787y")]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 21.2526, -3.92852, 11.128)
 
+[node name="wall_gltf66" parent="." instance=ExtResource("3_m787y")]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 28.1847, -3.92852, -7.1725)
+
+[node name="wall_gltf68" parent="." instance=ExtResource("3_m787y")]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 24.3762, -3.92852, -7.1725)
+
+[node name="wall_gltf69" parent="." instance=ExtResource("3_m787y")]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 24.3762, -3.92852, -3.31468)
+
 [node name="wall_gltf57" parent="." instance=ExtResource("3_m787y")]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 17.3666, -3.92852, 11.128)
 
 [node name="wall_gltf58" parent="." instance=ExtResource("3_m787y")]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 13.4451, -3.92852, 11.128)
 
-[node name="wall_gltf59" parent="." instance=ExtResource("3_m787y")]
+[node name="StaticBody3D40" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 9.58017, -3.92852, 11.128)
 
-[node name="wall_gltf42" parent="." instance=ExtResource("3_m787y")]
+[node name="wall_gltf59" parent="StaticBody3D40" instance=ExtResource("3_m787y")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D40"]
+transform = Transform3D(20, 0, 0, 0, 8, 0, 0, 0, 1.5, 7.62049, 0, 0)
+shape = SubResource("BoxShape3D_f0eam")
+
+[node name="StaticBody3D34" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 28.2647, -3.92852, 38.4163)
 
-[node name="wall_gltf2" parent="." instance=ExtResource("3_m787y")]
+[node name="wall_gltf42" parent="StaticBody3D34" instance=ExtResource("3_m787y")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D34"]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 1.5, 0.662006, 0, 0)
+shape = SubResource("BoxShape3D_o2vn3")
+
+[node name="StaticBody3D11" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 2.70043, -3.96016, 18.264)
 
-[node name="wallCorner_gltf2" parent="." instance=ExtResource("6_1s25b")]
+[node name="wall_gltf2" parent="StaticBody3D11" instance=ExtResource("3_m787y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.145311, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D11"]
+transform = Transform3D(6, 0, 0, 0, 8, 0, 0, 0, 1, 1.16989, 0, -0.305254)
+shape = SubResource("BoxShape3D_6h3vu")
+
+[node name="StaticBody3D13" type="StaticBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1.5, 0, 1, 0, -4.37114e-08, 7.8, -3.95, 18.264)
+
+[node name="wallCorner_gltf2" parent="StaticBody3D13" instance=ExtResource("6_1s25b")]
+transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 0.133169, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D13"]
+transform = Transform3D(3, 0, 2.84217e-14, 0, 8, 0, -5.68434e-14, 0, 1.5, 0, 0, 0.0092144)
+shape = SubResource("BoxShape3D_tnha7")
 
 [node name="wallCorner_gltf3" parent="." instance=ExtResource("6_1s25b")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, -8.05, -3.95, 3.835)
@@ -180,23 +344,69 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, -8.0
 [node name="wallCorner_gltf9" parent="." instance=ExtResource("6_1s25b")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, 24.263, -3.95, 38.4167)
 
-[node name="wallCorner_gltf4" parent="." instance=ExtResource("6_1s25b")]
+[node name="StaticBody3D3" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 7.81672, -3.95, 3.835)
 
-[node name="wall_gltf3" parent="." instance=ExtResource("3_m787y")]
+[node name="wallCorner_gltf4" parent="StaticBody3D3" instance=ExtResource("6_1s25b")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D3"]
+transform = Transform3D(3, 0, 0, 0, 8, 0, 0, 0, 1, -0.76099, 0, 0)
+shape = SubResource("BoxShape3D_e0bwx")
+
+[node name="wallCorner_gltf12" parent="." instance=ExtResource("6_1s25b")]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 32.1807, -3.95, -7.17059)
+
+[node name="wallCorner_gltf13" parent="." instance=ExtResource("6_1s25b")]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 26.4139, -3.95, -3.38024)
+
+[node name="StaticBody3D14" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 5.20043, -3.96016, 18.264)
 
-[node name="wall_gltf4" parent="." instance=ExtResource("3_m787y")]
+[node name="wall_gltf3" parent="StaticBody3D14" instance=ExtResource("3_m787y")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D14"]
+transform = Transform3D(5, 0, 0, 0, 8, 0, 0, 0, 1, -1.93879, 0, 0.265177)
+shape = SubResource("BoxShape3D_e0bav")
+
+[node name="StaticBody3D15" type="StaticBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, -8.05, -3.95, 20.9752)
 
-[node name="wall_gltf5" parent="." instance=ExtResource("3_m787y")]
+[node name="wall_gltf4" parent="StaticBody3D15" instance=ExtResource("3_m787y")]
+transform = Transform3D(1, 0, -3.55271e-15, 0, 1, 0, 3.55271e-15, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D15"]
+transform = Transform3D(5, 0, -7.10543e-15, 0, 8, 0, 2.84217e-14, 0, 1, 0, 0, 0.262333)
+shape = SubResource("BoxShape3D_q2xb6")
+
+[node name="StaticBody3D16" type="StaticBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, -8.05, -3.95, 24.9608)
 
-[node name="wall_gltf6" parent="." instance=ExtResource("3_m787y")]
+[node name="wall_gltf5" parent="StaticBody3D16" instance=ExtResource("3_m787y")]
+transform = Transform3D(1, 0, -3.55271e-15, 0, 1, 0, 3.55271e-15, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D16"]
+transform = Transform3D(5, 0, -1.42109e-14, 0, 8, 0, 5.68434e-14, 0, 1, -1.01417, 0, 0.198522)
+shape = SubResource("BoxShape3D_8ndr2")
+
+[node name="StaticBody3D20" type="StaticBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, -8.05, -3.95, 28.9416)
 
-[node name="wall_gltf7" parent="." instance=ExtResource("3_m787y")]
+[node name="wall_gltf6" parent="StaticBody3D20" instance=ExtResource("3_m787y")]
+transform = Transform3D(1, 0, -3.55271e-15, 0, 1, 0, 3.55271e-15, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D20"]
+transform = Transform3D(5, 0, -2.13163e-14, 0, 8, 0, 8.52651e-14, 0, 1, -1.99819, 0, 0.190135)
+shape = SubResource("BoxShape3D_atfaf")
+
+[node name="StaticBody3D21" type="StaticBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, -8.05, -3.95, 32.9303)
+
+[node name="wall_gltf7" parent="StaticBody3D21" instance=ExtResource("3_m787y")]
+transform = Transform3D(1, 0, -3.55271e-15, 0, 1, 0, 3.55271e-15, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D21"]
+transform = Transform3D(20, 0, -3.19744e-14, 0, 8, 0, 5.68434e-13, 0, 1, -8.19175, 0, 0.258382)
+shape = SubResource("BoxShape3D_xmrso")
 
 [node name="wall_gltf20" parent="." instance=ExtResource("3_m787y")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, -8.05, -3.95, 36.9106)
@@ -204,14 +414,35 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, -8.0
 [node name="wall_gltf27" parent="." instance=ExtResource("3_m787y")]
 transform = Transform3D(-8.74228e-08, 0, 1, 0, 1.5, 0, -2, 0, -4.37114e-08, -8.05, -3.95, 45.0491)
 
-[node name="wall_gltf18" parent="." instance=ExtResource("3_m787y")]
+[node name="StaticBody3D22" type="StaticBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, 7.80638, -3.95, 20.9931)
 
-[node name="wall_gltf21" parent="." instance=ExtResource("3_m787y")]
+[node name="wall_gltf18" parent="StaticBody3D22" instance=ExtResource("3_m787y")]
+transform = Transform3D(1, 0, -3.55271e-15, 0, 1, 0, 3.55271e-15, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D22"]
+transform = Transform3D(5, 0, -2.84217e-14, 0, 8, 0, 8.52651e-14, 0, 1.5, -1.27384, 0, -0.0251045)
+shape = SubResource("BoxShape3D_w6bv2")
+
+[node name="StaticBody3D23" type="StaticBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, 7.80638, -3.95, 24.9641)
 
-[node name="wall_gltf43" parent="." instance=ExtResource("3_m787y")]
+[node name="wall_gltf21" parent="StaticBody3D23" instance=ExtResource("3_m787y")]
+transform = Transform3D(1, 0, -3.55271e-15, 0, 1, 0, 3.55271e-15, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D23"]
+transform = Transform3D(5, 0, -4.26326e-14, 0, 8, 0, 1.27898e-13, 0, 1.5, -2.35566, 0.0460291, -0.0326958)
+shape = SubResource("BoxShape3D_1nhg8")
+
+[node name="StaticBody3D35" type="StaticBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, 32.1754, -3.95, 34.4276)
+
+[node name="wall_gltf43" parent="StaticBody3D35" instance=ExtResource("3_m787y")]
+transform = Transform3D(1, 0, -3.55271e-15, 0, 1, 0, 3.55271e-15, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D35"]
+transform = Transform3D(28, 0, -3.55271e-14, 0, 8, 0, 5.68434e-13, 0, 1.5, 9.26091, 0, 0)
+shape = SubResource("BoxShape3D_mmwqo")
 
 [node name="wall_gltf44" parent="." instance=ExtResource("3_m787y")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, 32.1754, -3.95, 30.5486)
@@ -228,8 +459,15 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, 32.1
 [node name="wall_gltf53" parent="." instance=ExtResource("3_m787y")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, 32.1754, -3.95, 15.079)
 
-[node name="wall_gltf60" parent="." instance=ExtResource("3_m787y")]
+[node name="StaticBody3D42" type="StaticBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, 32.1754, -3.95, 8.52064)
+
+[node name="wall_gltf60" parent="StaticBody3D42" instance=ExtResource("3_m787y")]
+transform = Transform3D(1, 0, -3.55271e-15, 0, 1, 0, 3.55271e-15, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D42"]
+transform = Transform3D(18, 0, -2.84217e-14, 0, 8, 0, 2.27374e-13, 0, 1.5, 7.41587, 0, 0)
+shape = SubResource("BoxShape3D_nkcfv")
 
 [node name="wall_gltf62" parent="." instance=ExtResource("3_m787y")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, 32.1754, -3.95, 4.53974)
@@ -237,8 +475,18 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, 32.1
 [node name="wall_gltf64" parent="." instance=ExtResource("3_m787y")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, 32.1754, -3.95, 0.644604)
 
-[node name="wall_gltf61" parent="." instance=ExtResource("3_m787y")]
+[node name="wall_gltf67" parent="." instance=ExtResource("3_m787y")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, 32.1754, -3.95, -3.23469)
+
+[node name="StaticBody3D43" type="StaticBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, 26.4361, -3.95, 8.52064)
+
+[node name="wall_gltf61" parent="StaticBody3D43" instance=ExtResource("3_m787y")]
+transform = Transform3D(1, 0, -3.55271e-15, 0, 1, 0, 3.55271e-15, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D43"]
+transform = Transform3D(15, 0, -2.13163e-14, 0, 8, 0, 2.27374e-13, 0, 1.5, 5.17081, 0, 0)
+shape = SubResource("BoxShape3D_ejdx3")
 
 [node name="wall_gltf63" parent="." instance=ExtResource("3_m787y")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, 26.4361, -3.95, 4.53678)
@@ -246,8 +494,15 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, 26.4
 [node name="wall_gltf65" parent="." instance=ExtResource("3_m787y")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, 26.4361, -3.95, 0.551193)
 
-[node name="wall_gltf22" parent="." instance=ExtResource("3_m787y")]
+[node name="StaticBody3D24" type="StaticBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, 7.80638, -3.95, 28.917)
+
+[node name="wall_gltf22" parent="StaticBody3D24" instance=ExtResource("3_m787y")]
+transform = Transform3D(1, 0, -3.55271e-15, 0, 1, 0, 3.55271e-15, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D24"]
+transform = Transform3D(10.5, 0, -2.13163e-14, 0, 8, 0, 1.7053e-13, 0, 1.5, -6.12849, 0, -3.8147e-06)
+shape = SubResource("BoxShape3D_71gpg")
 
 [node name="wall_gltf23" parent="." instance=ExtResource("3_m787y")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, 7.80638, -3.95, 32.9077)
@@ -255,14 +510,27 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, 7.80
 [node name="wall_gltf24" parent="." instance=ExtResource("3_m787y")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, 7.80638, -3.95, 36.8781)
 
-[node name="wall_gltf38" parent="." instance=ExtResource("3_m787y")]
+[node name="StaticBody3D33" type="StaticBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, 24.2713, -3.95, 46.3081)
+
+[node name="wall_gltf38" parent="StaticBody3D33" instance=ExtResource("3_m787y")]
+transform = Transform3D(1, 0, -3.55271e-15, 0, 1, 0, 3.55271e-15, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D33"]
+transform = Transform3D(12, 0, -1.42109e-14, 0, 8, 0, 1.13687e-13, 0, 1.5, 2.62962, 0, 0)
+shape = SubResource("BoxShape3D_pp8p3")
 
 [node name="wall_gltf39" parent="." instance=ExtResource("3_m787y")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, 24.2713, -3.95, 42.3502)
 
-[node name="wall_gltf8" parent="." instance=ExtResource("3_m787y")]
+[node name="StaticBody3D17" type="StaticBody3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, -3.36538, -3.95, 26.0478)
+
+[node name="wall_gltf8" parent="StaticBody3D17" instance=ExtResource("3_m787y")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D17"]
+transform = Transform3D(4, 0, 0, 0, 8, 0, 0, 0, 1.5, 0.00298131, 0, 0)
+shape = SubResource("BoxShape3D_b3phd")
 
 [node name="wall_gltf48" parent="." instance=ExtResource("3_m787y")]
 transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 27.6252, -3.95, 32.7861)
@@ -270,59 +538,174 @@ transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 27.6252, -3.95, 32.7861)
 [node name="wall_gltf50" parent="." instance=ExtResource("3_m787y")]
 transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 27.6252, -3.95, 25.5883)
 
-[node name="wall_gltf49" parent="." instance=ExtResource("3_m787y")]
+[node name="StaticBody3D36" type="StaticBody3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 19.632, -3.95, 32.7861)
 
-[node name="wall_gltf51" parent="." instance=ExtResource("3_m787y")]
+[node name="wall_gltf49" parent="StaticBody3D36" instance=ExtResource("3_m787y")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D36"]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 1.5, 1.98292, 0, 0)
+shape = SubResource("BoxShape3D_0gfes")
+
+[node name="StaticBody3D37" type="StaticBody3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 19.632, -3.95, 25.5924)
 
-[node name="wall_gltf52" parent="." instance=ExtResource("3_m787y")]
+[node name="wall_gltf51" parent="StaticBody3D37" instance=ExtResource("3_m787y")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D37"]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 1.5, 2.0296, 0, 0)
+shape = SubResource("BoxShape3D_pqb6b")
+
+[node name="StaticBody3D38" type="StaticBody3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 12.3851, -3.95, 20.0647)
 
-[node name="wall_gltf25" parent="." instance=ExtResource("3_m787y")]
-transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 1.89217, -3.95, 41.0225)
+[node name="wall_gltf52" parent="StaticBody3D38" instance=ExtResource("3_m787y")]
 
-[node name="wall_gltf19" parent="." instance=ExtResource("3_m787y")]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D38"]
+transform = Transform3D(4, 0, 0, 0, 8, 0, 0, 0, 1.5, -0.0130529, 0, 0)
+shape = SubResource("BoxShape3D_qsuu2")
+
+[node name="StaticBody3D26" type="StaticBody3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 1.5, 0, 0, 0, 1, 1.89217, -3.95, 40.8939)
+
+[node name="wall_gltf25" parent="StaticBody3D26" instance=ExtResource("3_m787y")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D26"]
+transform = Transform3D(5, 0, 0, 0, 8, 0, 0, 0, 1.5, 0.495452, 0, 0)
+shape = SubResource("BoxShape3D_yciak")
+
+[node name="StaticBody3D19" type="StaticBody3D" parent="."]
 transform = Transform3D(0.7, 0, 0, 0, 1, 0, 0, 0, 1, -4.04794, -3.95, 36.2729)
 
-[node name="wall_gltf26" parent="." instance=ExtResource("3_m787y")]
+[node name="wall_gltf19" parent="StaticBody3D19" instance=ExtResource("3_m787y")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D19"]
+transform = Transform3D(4, 0, 0, 0, 8, 0, 0, 0, 1.5, -0.00740862, 0, 0)
+shape = SubResource("BoxShape3D_0q2pv")
+
+[node name="StaticBody3D29" type="StaticBody3D" parent="."]
 transform = Transform3D(-3.0598e-08, 0, -1, 0, 1, 0, 0.7, 0, -4.37114e-08, -0.217124, -3.95, 42.9718)
 
-[node name="wall_gltf41" parent="." instance=ExtResource("3_m787y")]
+[node name="wall_gltf26" parent="StaticBody3D29" instance=ExtResource("3_m787y")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D29"]
+transform = Transform3D(4, 0, 0, 0, 8, 0, 0, 0, 1.5, 0, 0, 0)
+shape = SubResource("BoxShape3D_hst28")
+
+[node name="StaticBody3D32" type="StaticBody3D" parent="."]
 transform = Transform3D(-3.0598e-08, 0, -1, 0, 1, 0, 0.7, 0, -4.37114e-08, 18.5682, -3.95, 42.8522)
 
-[node name="wall_gltf40" parent="." instance=ExtResource("3_m787y")]
+[node name="wall_gltf41" parent="StaticBody3D32" instance=ExtResource("3_m787y")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D32"]
+transform = Transform3D(4, 0, 0, 0, 8, 0, 0, 0, 1.5, 0, 0, 0)
+shape = SubResource("BoxShape3D_1ntls")
+
+[node name="StaticBody3D31" type="StaticBody3D" parent="."]
 transform = Transform3D(2.5, 0, 0, 0, 1, 0, 0, 0, 1, 10.0541, -3.95, 45.5376)
 
-[node name="wall_gltf9" parent="." instance=ExtResource("3_m787y")]
+[node name="wall_gltf40" parent="StaticBody3D31" instance=ExtResource("3_m787y")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D31"]
+transform = Transform3D(4, 0, 0, 0, 8, 0, 0, 0, 1.5, 0, 0, 0)
+shape = SubResource("BoxShape3D_hbyg7")
+
+[node name="StaticBody3D7" type="StaticBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, -8.05, -3.95, 14.2298)
 
-[node name="wall_gltf13" parent="." instance=ExtResource("3_m787y")]
+[node name="wall_gltf9" parent="StaticBody3D7" instance=ExtResource("3_m787y")]
+transform = Transform3D(1, 0, -3.55271e-15, 0, 1, 0, 3.55271e-15, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D7"]
+transform = Transform3D(5, 0, -7.10543e-15, 0, 8, 0, 2.84217e-14, 0, 1, 0, 0, 0.293607)
+shape = SubResource("BoxShape3D_4ytfl")
+
+[node name="StaticBody3D12" type="StaticBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, 7.8, -3.95, 14.317)
 
-[node name="wall_gltf17" parent="." instance=ExtResource("3_m787y")]
+[node name="wall_gltf13" parent="StaticBody3D12" instance=ExtResource("3_m787y")]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, -0.0742645, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D12"]
+transform = Transform3D(5, 0, 0, 0, 8, 0, 0, 0, 1.5, -1.07777, 0, -0.0120659)
+shape = SubResource("BoxShape3D_k4i70")
+
+[node name="StaticBody3D18" type="StaticBody3D" parent="."]
 transform = Transform3D(-6.55671e-08, 0, 1, 0, 1, 0, -1.5, 0, -4.37114e-08, 0.304196, -3.95, 33.2944)
 
-[node name="wall_gltf54" parent="." instance=ExtResource("3_m787y")]
+[node name="wall_gltf17" parent="StaticBody3D18" instance=ExtResource("3_m787y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 7.10543e-15, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D18"]
+transform = Transform3D(4, 0, 0, 0, 8, 0, 0, 0, 1.5, 0, 0, 0)
+shape = SubResource("BoxShape3D_x7rrs")
+
+[node name="StaticBody3D39" type="StaticBody3D" parent="."]
 transform = Transform3D(1.12147, 0, 0.664096, 0, 1, 0, -0.996144, 0, 0.747648, 22.8497, -3.95, 17.268)
 
-[node name="wall_gltf14" parent="." instance=ExtResource("3_m787y")]
+[node name="wall_gltf54" parent="StaticBody3D39" instance=ExtResource("3_m787y")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D39"]
+transform = Transform3D(4, 0, 0, 0, 8, 0, 0, 0, 1.5, 0, 0, 0)
+shape = SubResource("BoxShape3D_nks23")
+
+[node name="StaticBody3D8" type="StaticBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, 7.8, -3.95, 10.3547)
 
-[node name="wall_gltf15" parent="." instance=ExtResource("3_m787y")]
+[node name="wall_gltf14" parent="StaticBody3D8" instance=ExtResource("3_m787y")]
+transform = Transform3D(1, 0, -3.55271e-15, 0, 1, 0, 3.55271e-15, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D8"]
+transform = Transform3D(5, 0, -2.13163e-14, 0, 8, 0, 5.68434e-14, 0, 1.5, 0, 0, -0.00922585)
+shape = SubResource("BoxShape3D_lq27k")
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, 7.8, -3.95, 6.35936)
 
-[node name="wall_gltf10" parent="." instance=ExtResource("3_m787y")]
+[node name="wall_gltf15" parent="StaticBody3D4" instance=ExtResource("3_m787y")]
+transform = Transform3D(1, 0, -3.55271e-15, 0, 1, 0, 3.55271e-15, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D4"]
+transform = Transform3D(5, 0, -6.39488e-14, 0, 8, 0, 1.84741e-13, 0, 1.5, 0.776184, 0, -0.00850677)
+shape = SubResource("BoxShape3D_tt2o1")
+
+[node name="StaticBody3D6" type="StaticBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, -8.05, -3.95, 10.2732)
 
-[node name="wall_gltf11" parent="." instance=ExtResource("3_m787y")]
+[node name="wall_gltf10" parent="StaticBody3D6" instance=ExtResource("3_m787y")]
+transform = Transform3D(1, 0, -3.55271e-15, 0, 1, 0, 3.55271e-15, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D6"]
+transform = Transform3D(5, 0, -7.10543e-15, 0, 8, 0, 2.84217e-14, 0, 1, 0, 0, 0.277794)
+shape = SubResource("BoxShape3D_53p3w")
+
+[node name="StaticBody3D5" type="StaticBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, -8.05, -3.95, 6.30154)
 
-[node name="wall_gltf12" parent="." instance=ExtResource("3_m787y")]
+[node name="wall_gltf11" parent="StaticBody3D5" instance=ExtResource("3_m787y")]
+transform = Transform3D(1, 0, -3.55271e-15, 0, 1, 0, 3.55271e-15, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D5"]
+transform = Transform3D(5, 0, -7.10543e-15, 0, 8, 0, 2.84217e-14, 0, 1, 0, 0, 0.259542)
+shape = SubResource("BoxShape3D_bpjkr")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -4.125, -3.95, 3.835)
 
-[node name="wall_gltf16" parent="." instance=ExtResource("3_m787y")]
+[node name="wall_gltf12" parent="StaticBody3D" instance=ExtResource("3_m787y")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(5, 0, 0, 0, 8, 0, 0, 0, 1, -0.761294, 0, 0.18614)
+shape = SubResource("BoxShape3D_1e0io")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 4.2493, -3.95, 3.835)
+
+[node name="wall_gltf16" parent="StaticBody3D2" instance=ExtResource("3_m787y")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+transform = Transform3D(5, 0, 0, 0, 8, 0, 0, 0, 1, 0.502833, 0, 0.187232)
+shape = SubResource("BoxShape3D_4bjqm")
 
 [node name="door_gltf" parent="." instance=ExtResource("8_n8esw")]
 transform = Transform3D(2.2, 0, 0, 0, 2.5, 0, 0, 0, 1.5, 19.275, -2.93787, 40.6544)
