@@ -46,7 +46,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.749381, 1.27287, -0.410356
 shape = SubResource("SphereShape3D_x2of2")
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
-transform = Transform3D(-0.996585, -0.0163619, 0.0809384, 0.0220069, 0.892097, 0.451308, -0.0795892, 0.451548, -0.88869, -0.663014, 3.53359, -3.87956)
+transform = Transform3D(-0.996585, -0.0163619, 0.0809384, 0.023742, 0.882009, 0.470633, -0.0790889, 0.470948, -0.878609, -0.663014, 3.53359, -4.83374)
 script = ExtResource("3_p77my")
 
 [editable path="Player/Pivot/Casual_Male"]
