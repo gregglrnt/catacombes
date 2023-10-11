@@ -1,10 +1,9 @@
-[gd_scene load_steps=61 format=3 uid="uid://ci6qg7t1dmmmu"]
+[gd_scene load_steps=60 format=3 uid="uid://ci6qg7t1dmmmu"]
 
 [ext_resource type="PackedScene" uid="uid://3inn2imk6ytt" path="res://player.tscn" id="1_7xctj"]
 [ext_resource type="PackedScene" uid="uid://bmfc61qen68g2" path="res://static_body_3d.tscn" id="2_doeps"]
 [ext_resource type="MeshLibrary" uid="uid://dwlhjxskbm2h5" path="res://meshLibrary.meshlib" id="3_7dob6"]
 [ext_resource type="PackedScene" uid="uid://b7mhnj6smncur" path="res://assets/wall.gltf.glb" id="3_m787y"]
-[ext_resource type="PackedScene" uid="uid://domlnph87644i" path="res://assets/stairs_wide.gltf.glb" id="5_7fqsd"]
 [ext_resource type="PackedScene" uid="uid://bifhdwotmixt1" path="res://assets/door_gate.gltf.glb" id="5_p46i8"]
 [ext_resource type="PackedScene" uid="uid://dgltt0fiod214" path="res://assets/wallCorner.gltf.glb" id="6_1s25b"]
 [ext_resource type="PackedScene" uid="uid://6wevh4jxjmeo" path="res://assets/door.gltf.glb" id="8_n8esw"]
@@ -181,43 +180,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.4255, -36.4257)
 [node name="GridMap4" type="GridMap" parent="."]
 mesh_library = ExtResource("3_7dob6")
 metadata/_editor_floor_ = Vector3(0, -45, 0)
-
-[node name="XRController3D" type="XRController3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1.3, 0, 0, 0, 1, 0, -4, 6.16698)
-
-[node name="StaticBody3D44" type="StaticBody3D" parent="XRController3D"]
-
-[node name="stairs_wide_gltf" parent="XRController3D/StaticBody3D44" instance=ExtResource("5_7fqsd")]
-
-[node name="stairs_wide_gltf2" parent="XRController3D/StaticBody3D44" instance=ExtResource("5_7fqsd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.7854, -5.72371)
-
-[node name="stairs_wide_gltf3" parent="XRController3D/StaticBody3D44" instance=ExtResource("5_7fqsd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.22715, -10.6857)
-
-[node name="stairs_wide_gltf4" parent="XRController3D/StaticBody3D44" instance=ExtResource("5_7fqsd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.6862, -15.6039)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="XRController3D/StaticBody3D44"]
-transform = Transform3D(400, 0, 0, 0, 116.104, 0.814247, 0, -162.849, 0.580518, 0, 1.34554, 1.48125)
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="XRController3D/StaticBody3D44"]
-transform = Transform3D(400, 0, 0, 0, 232.281, 0.814115, 0, -325.646, 0.580703, 0, 3.14619, -1.07482)
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="XRController3D/StaticBody3D44"]
-transform = Transform3D(400, 0, 0, 0, 232.281, 0.814115, 0, -325.646, 0.580703, 0, 5.47427, -4.37002)
-
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="XRController3D/StaticBody3D44"]
-transform = Transform3D(400, 0, 0, 0, 232.281, 0.814115, 0, -325.646, 0.580703, 0, 7.59843, -7.8547)
-
-[node name="CollisionShape3D5" type="CollisionShape3D" parent="XRController3D/StaticBody3D44"]
-transform = Transform3D(400, 0, 0, 0, 232.281, 0.814115, 0, -325.646, 0.580703, 0, 9.88869, -11.0509)
-
-[node name="CollisionShape3D6" type="CollisionShape3D" parent="XRController3D/StaticBody3D44"]
-transform = Transform3D(400, 0, 0, 0, 232.281, 0.814115, 0, -325.646, 0.580703, 0, 12.3941, -14.2529)
-
-[node name="CollisionShape3D7" type="CollisionShape3D" parent="XRController3D/StaticBody3D44"]
-transform = Transform3D(400, 0, 0, 0, 232.281, 0.814115, 0, -325.646, 0.580703, 0, 13.526, -16.9609)
 
 [node name="door_gate_gltf" parent="." instance=ExtResource("5_p46i8")]
 transform = Transform3D(1.5, 0, 0, 0, 2, 0, 0, 0, 1.5, -2.17765, -2.44185, 18.3352)
