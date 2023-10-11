@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ibs82y51mugw"]
+[gd_scene load_steps=4 format=3 uid="uid://yqnpcqfinq7h"]
 
-[ext_resource type="FontFile" uid="uid://bxgqb4amuki4v" path="res://fonts/Anarchist Mustache.ttf" id="1_714x4"]
-[ext_resource type="FontFile" uid="uid://cvrwrs3wymb8o" path="res://fonts/GoddessSymbols.ttf" id="2_35c7h"]
-[ext_resource type="Script" path="res://scripts/menu.gd" id="3_r1dwd"]
+[ext_resource type="FontFile" uid="uid://bxgqb4amuki4v" path="res://fonts/Anarchist Mustache.ttf" id="1_mk1xv"]
+[ext_resource type="FontFile" uid="uid://cvrwrs3wymb8o" path="res://fonts/GoddessSymbols.ttf" id="2_8wbhm"]
+[ext_resource type="Script" path="res://scripts/options_menu.gd" id="3_xltxn"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -14,8 +14,10 @@ grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_right = 1919.0
-offset_bottom = 1079.0
+offset_left = -7.0
+offset_top = -36.0
+offset_right = 1912.0
+offset_bottom = 1040.0
 
 [node name="Label" type="Label" parent="ColorRect"]
 layout_mode = 0
@@ -24,7 +26,7 @@ offset_top = 152.0
 offset_right = 1918.0
 offset_bottom = 209.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_714x4")
+theme_override_fonts/font = ExtResource("1_mk1xv")
 theme_override_font_sizes/font_size = 53
 text = "Infiltrer le groupe le plus mystérieux de Paris dans"
 horizontal_alignment = 1
@@ -37,7 +39,7 @@ offset_top = 222.0
 offset_right = 1918.0
 offset_bottom = 356.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_714x4")
+theme_override_fonts/font = ExtResource("1_mk1xv")
 theme_override_font_sizes/font_size = 68
 text = "CATACOMBES"
 horizontal_alignment = 1
@@ -50,7 +52,7 @@ offset_top = 227.0
 offset_right = 687.0
 offset_bottom = 339.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_35c7h")
+theme_override_fonts/font = ExtResource("2_8wbhm")
 theme_override_font_sizes/font_size = 68
 text = "O"
 horizontal_alignment = 1
@@ -63,54 +65,52 @@ offset_top = 233.0
 offset_right = 1302.0
 offset_bottom = 340.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_35c7h")
+theme_override_fonts/font = ExtResource("2_8wbhm")
 theme_override_font_sizes/font_size = 68
 text = "O"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="playButton" type="Button" parent="ColorRect"]
+[node name="volumeButton" type="Button" parent="ColorRect"]
 layout_mode = 0
-offset_left = 2.0
-offset_top = 410.0
-offset_right = 1919.0
-offset_bottom = 525.0
+offset_top = 420.0
+offset_right = 1920.0
+offset_bottom = 507.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_714x4")
+theme_override_fonts/font = ExtResource("1_mk1xv")
 theme_override_font_sizes/font_size = 78
-text = "JOUER"
+text = "VOLUME"
 flat = true
-script = ExtResource("3_r1dwd")
+script = ExtResource("3_xltxn")
 
-[node name="playButton2" type="Button" parent="ColorRect"]
+[node name="aideButton" type="Button" parent="ColorRect"]
 layout_mode = 0
-offset_left = 2.0
-offset_top = 531.0
-offset_right = 1919.0
-offset_bottom = 646.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_714x4")
-theme_override_font_sizes/font_size = 78
-text = "OPTIONS"
-flat = true
-script = ExtResource("3_r1dwd")
-
-[node name="playButton3" type="Button" parent="ColorRect"]
-layout_mode = 0
-offset_left = 6.0
-offset_top = 651.0
+offset_left = 3.0
+offset_top = 536.0
 offset_right = 1923.0
-offset_bottom = 766.0
+offset_bottom = 623.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_714x4")
+theme_override_fonts/font = ExtResource("1_mk1xv")
 theme_override_font_sizes/font_size = 78
-text = "EXIT"
+text = "AIDE"
 flat = true
-script = ExtResource("3_r1dwd")
+script = ExtResource("3_xltxn")
 
-[connection signal="pressed" from="ColorRect/playButton" to="ColorRect/playButton" method="_on_play_pressed"]
-[connection signal="pressed" from="ColorRect/playButton2" to="ColorRect/playButton2" method="_on_options_pressed"]
-[connection signal="pressed" from="ColorRect/playButton3" to="ColorRect/playButton3" method="_on_exit_pressed"]
+[node name="retourButton" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 649.0
+offset_right = 1922.0
+offset_bottom = 736.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_mk1xv")
+theme_override_font_sizes/font_size = 78
+text = "RETOUR"
+flat = true
+script = ExtResource("3_xltxn")
+
+[connection signal="pressed" from="ColorRect/aideButton" to="ColorRect/aideButton" method="_on_aideButton_pressed"]
+[connection signal="pressed" from="ColorRect/retourButton" to="ColorRect/retourButton" method="_on_retour_pressed"]

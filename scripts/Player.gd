@@ -12,17 +12,20 @@ class_name Player
 var target_velocity = Vector3.ZERO
 @onready var animation = $Pivot/Casual_Male/AnimationPlayer
 
+func _unhandled_input(event: InputEvent):
+	if event.is_action_pressed("ui_cancel"):
+		$PauseMenu.pause()
+
+
 func _physics_process(delta):
 	if dead: 
 		animation.play("Defeat")
 		return
 
 	var direction = Vector3.ZERO
-	if Input.is_action_pressed("move_left") and Input.is_action_pressed("move_right"):
-		direction.x += 0;
-	elif Input.is_action_pressed("move_left"):
+	if Input.is_action_pressed("move_left"):
 		direction.x += 1
-	elif Input.is_action_pressed("move_right"):
+	if Input.is_action_pressed("move_right"):
 		direction.x -= 1
 	if Input.is_action_pressed("move_forward"):
 		direction.z += 1

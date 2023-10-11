@@ -111,10 +111,6 @@ normal_texture = ExtResource("1_dugmc")
 
 [node name="Level" type="Node3D"]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 3.3293, -8.58397)
-shadow_enabled = true
-
 [node name="Ground" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
@@ -126,7 +122,10 @@ mesh = SubResource("PlaneMesh_otwxu")
 surface_material_override/0 = SubResource("StandardMaterial3D_nvpgf")
 
 [node name="PlayerScene" parent="." instance=ExtResource("1_agp6n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.33732, 0, -7.79719)
+script = null
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.999945, 0.0104718, 8.72098e-08, 0.0104463, -0.997509, 0.0697565, 0.000730562, -0.0697526, -0.997564, 0, 12.3931, -28.0088)
 
 [node name="door_gate_gltf" parent="." instance=ExtResource("4_gljdb")]
 transform = Transform3D(1.5, 0, 0, 0, 2, 0, 0, 0, 1.5, 2.36734, 0.772996, 0.713814)

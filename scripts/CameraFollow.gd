@@ -11,6 +11,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+
 	var target = get_parent().get_global_transform().origin
 	var pos = get_global_transform().origin
 	var up = Vector3(0,1,0)

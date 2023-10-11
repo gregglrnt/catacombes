@@ -11,5 +11,9 @@ func _process(delta):
 	pass
 
 
-func _on_play_pressed():
-	get_tree().change_scene_to_file("res://level.tscn")
+func _on_retour_pressed():
+	get_tree().change_scene_to_file("res://menu.tscn")
+
+
+func _on_aideButton_pressed():
+	pass # Replace with function body.
