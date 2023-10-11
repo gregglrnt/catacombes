@@ -1,0 +1,99 @@
+[gd_scene load_steps=5 format=3 uid="uid://cijnfv020w2ee"]
+
+[ext_resource type="FontFile" uid="uid://bxgqb4amuki4v" path="res://fonts/Anarchist Mustache.ttf" id="1_714x4"]
+[ext_resource type="FontFile" uid="uid://cvrwrs3wymb8o" path="res://fonts/GoddessSymbols.ttf" id="2_35c7h"]
+[ext_resource type="Script" path="res://scripts/playButton.gd" id="3_075aq"]
+[ext_resource type="Script" path="res://scripts/optionsButton.gd" id="4_ihe2q"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1919.0
+offset_bottom = 1079.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 481.0
+offset_top = 42.0
+offset_right = 1454.0
+offset_bottom = 89.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_714x4")
+theme_override_font_sizes/font_size = 53
+text = "Infiltrer le groupe le plus mystérieux de Paris dans"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 816.0
+offset_top = 174.0
+offset_right = 1115.0
+offset_bottom = 246.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_714x4")
+theme_override_font_sizes/font_size = 68
+text = "CATACOMBES"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 591.0
+offset_top = 124.0
+offset_right = 736.0
+offset_bottom = 286.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_35c7h")
+theme_override_font_sizes/font_size = 68
+text = "O"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1181.0
+offset_top = 128.0
+offset_right = 1326.0
+offset_bottom = 290.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_35c7h")
+theme_override_font_sizes/font_size = 68
+text = "O"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="playButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 854.0
+offset_top = 300.0
+offset_right = 1098.0
+offset_bottom = 415.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_714x4")
+theme_override_font_sizes/font_size = 78
+text = "JOUER"
+flat = true
+script = ExtResource("3_075aq")
+
+[node name="optionsButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 856.0
+offset_top = 438.0
+offset_right = 1100.0
+offset_bottom = 553.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_714x4")
+theme_override_font_sizes/font_size = 78
+text = "OPTIONS"
+flat = true
+script = ExtResource("4_ihe2q")
+
+[connection signal="pressed" from="playButton" to="playButton" method="_on_play_pressed"]
+[connection signal="pressed" from="optionsButton" to="optionsButton" method="_on_play_pressed"]
