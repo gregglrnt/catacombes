@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://tp520khi4le5"]
+[gd_scene load_steps=58 format=3 uid="uid://tp520khi4le5"]
 
 [ext_resource type="PackedScene" uid="uid://3inn2imk6ytt" path="res://player.tscn" id="1_agp6n"]
 [ext_resource type="Texture2D" uid="uid://3o0nfp27yhmk" path="res://textures/Ground029.png" id="1_dugmc"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://kcxv3fcieaq1" path="res://assets/table_small_decorated_A.gltf.glb" id="8_181if"]
 [ext_resource type="PackedScene" uid="uid://b857r1jjhvxn4" path="res://assets/candle_triple.gltf.glb" id="9_36exq"]
 [ext_resource type="PackedScene" uid="uid://ccsdi2kwyc3dt" path="res://assets/wallSingle_door.gltf.glb" id="10_bv78a"]
+[ext_resource type="PackedScene" uid="uid://w5klhucye2np" path="res://enemy.tscn" id="10_o8rug"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2gg6s"]
 size = Vector3(100, 1, 100)
@@ -721,3 +722,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.2858, 5.26485, -6.43679)
 
 [node name="wallSingle_door_gltf" parent="." instance=ExtResource("10_bv78a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.35444, 18.153, -30.8932)
+
+[node name="EnemyScene" parent="." instance=ExtResource("10_o8rug")]
+transform = Transform3D(-0.999838, 0, -0.0180107, 0, 1, 0, 0.0180107, 0, -0.999838, 0, 0, 14.9217)
+
+[node name="EnemyScene2" parent="." instance=ExtResource("10_o8rug")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.03053, 0, 30.4393)
+
+[node name="EnemyScene3" parent="." instance=ExtResource("10_o8rug")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 21.9689, 0, 12.5138)
+
+[node name="EnemyScene4" parent="." instance=ExtResource("10_o8rug")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.9689, 0, -1.48928)
