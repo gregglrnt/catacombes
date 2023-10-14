@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ibs82y51mugw"]
+[gd_scene load_steps=5 format=3 uid="uid://ibs82y51mugw"]
 
 [ext_resource type="FontFile" uid="uid://bxgqb4amuki4v" path="res://fonts/Anarchist Mustache.ttf" id="1_714x4"]
 [ext_resource type="FontFile" uid="uid://cvrwrs3wymb8o" path="res://fonts/GoddessSymbols.ttf" id="2_35c7h"]
 [ext_resource type="Script" path="res://scripts/menu.gd" id="3_r1dwd"]
+[ext_resource type="AudioStream" uid="uid://bfhvfc2ij4lew" path="res://TPR - Dark Caverns (dungeon theme) - A Piano Tribute To Octopath Traveler.mp3" id="4_jp4tp"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -110,6 +111,10 @@ theme_override_font_sizes/font_size = 78
 text = "EXIT"
 flat = true
 script = ExtResource("3_r1dwd")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_jp4tp")
+autoplay = true
 
 [connection signal="pressed" from="ColorRect/playButton" to="ColorRect/playButton" method="_on_play_pressed"]
 [connection signal="pressed" from="ColorRect/playButton2" to="ColorRect/playButton2" method="_on_options_pressed"]

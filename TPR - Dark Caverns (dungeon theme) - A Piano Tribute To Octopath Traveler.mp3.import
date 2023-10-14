@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bfhvfc2ij4lew"
+path="res://.godot/imported/TPR - Dark Caverns (dungeon theme) - A Piano Tribute To Octopath Traveler.mp3-65be530476882413d5226f5887d107bc.mp3str"
+
+[deps]
+
+source_file="res://TPR - Dark Caverns (dungeon theme) - A Piano Tribute To Octopath Traveler.mp3"
+dest_files=["res://.godot/imported/TPR - Dark Caverns (dungeon theme) - A Piano Tribute To Octopath Traveler.mp3-65be530476882413d5226f5887d107bc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
