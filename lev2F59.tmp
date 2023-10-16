@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=3 uid="uid://tp520khi4le5"]
+[gd_scene load_steps=101 format=3 uid="uid://tp520khi4le5"]
 
 [ext_resource type="PackedScene" uid="uid://3inn2imk6ytt" path="res://player.tscn" id="1_agp6n"]
 [ext_resource type="Texture2D" uid="uid://3o0nfp27yhmk" path="res://textures/Ground029.png" id="1_dugmc"]
@@ -22,6 +22,8 @@
 [ext_resource type="Texture2D" uid="uid://bxrj3l86g6r85" path="res://textures/Grass001_4K-JPG_NormalGL.jpg" id="20_8is8d"]
 [ext_resource type="Texture2D" uid="uid://s7h4fnn5fy5d" path="res://textures/Grass001_4K-JPG_AmbientOcclusion.jpg" id="20_pa8lj"]
 [ext_resource type="Texture2D" uid="uid://d1h3t81t47yag" path="res://textures/Grass001_4K-JPG_Roughness.jpg" id="21_jj1vk"]
+[ext_resource type="ArrayMesh" uid="uid://duxtxgy16iwdu" path="res://assets/chest.obj" id="23_qdbou"]
+[ext_resource type="Texture2D" uid="uid://ctrdcvxryhmca" path="res://assets/chest_dungeon_texture.png" id="24_dkthh"]
 [ext_resource type="ArrayMesh" uid="uid://ctlw8y6a8aj7t" path="res://assets/chair.obj" id="25_450sd"]
 [ext_resource type="Texture2D" uid="uid://cp3r4gchpfn5j" path="res://assets/chair_dungeon_texture.png" id="26_watc1"]
 [ext_resource type="ArrayMesh" uid="uid://djjad7xb8k3rd" path="res://assets/table_long_decorated_C.obj" id="27_fxm7r"]
@@ -194,6 +196,11 @@ ao_texture = ExtResource("20_pa8lj")
 uv1_scale = Vector3(0, 0, 0)
 uv1_triplanar = true
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jtoo7"]
+albedo_texture = ExtResource("24_dkthh")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1dwq7"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iuepa"]
 albedo_texture = ExtResource("26_watc1")
 
@@ -245,7 +252,7 @@ mesh = SubResource("PlaneMesh_y000s")
 surface_material_override/0 = SubResource("StandardMaterial3D_7luux")
 
 [node name="PlayerScene" parent="." instance=ExtResource("1_agp6n")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 33.6936, 1.09667, -22.7018)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 33.6936, 1.09667, -10.7551)
 
 [node name="door_gate_gltf2" parent="." instance=ExtResource("4_gljdb")]
 transform = Transform3D(1.5, 0, 0, 0, 2, 0, 0, 0, 1.5, 31.7509, 0.772996, -6.57719)
@@ -1099,6 +1106,18 @@ transform = Transform3D(30, 0, 0, 0, 1, 0, 0, 0, 2, -18.654, 5.63983, -16.9981)
 mesh = SubResource("PlaneMesh_qq3cc")
 surface_material_override/0 = SubResource("StandardMaterial3D_gy1xx")
 
+[node name="Coffre" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11.9407, -26.7116)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Coffre"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 28.8995, 11.9452, 3.82231)
+mesh = ExtResource("23_qdbou")
+surface_material_override/0 = SubResource("StandardMaterial3D_jtoo7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Coffre"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.0301, 12.6133, 3.79491)
+shape = SubResource("BoxShape3D_1dwq7")
+
 [node name="Chaise1" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9547, -3.79273, 18.4366)
 
@@ -1127,7 +1146,7 @@ shape = SubResource("BoxShape3D_815m1")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.1474, -3.2018, -25.6854)
 
 [node name="Coins" parent="Tresor" instance=ExtResource("29_8187o")]
-transform = Transform3D(-0.998965, 0, 0.045485, 0, 1, 0, -0.045485, 0, -0.998965, 0, 0, 0)
+transform = Transform3D(-0.998965, 0, 0.045485, 0, 1, 0, -0.045485, 0, -0.998965, 5.97727, 3.7461, 2.78242)
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -1164,4 +1183,3 @@ text = "0"
 script = ExtResource("32_x44kn")
 
 [connection signal="body_entered" from="Tresor/Coins" to="Tresor/Coins" method="_on_body_entered_treasure"]
-[connection signal="treasureCollected" from="Tresor/Coins" to="Control/Counter" method="_on_treasure_collected"]
