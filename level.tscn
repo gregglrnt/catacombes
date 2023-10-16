@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=3 uid="uid://tp520khi4le5"]
+[gd_scene load_steps=97 format=3 uid="uid://tp520khi4le5"]
 
 [ext_resource type="PackedScene" uid="uid://3inn2imk6ytt" path="res://player.tscn" id="1_agp6n"]
 [ext_resource type="Texture2D" uid="uid://3o0nfp27yhmk" path="res://textures/Ground029.png" id="1_dugmc"]
@@ -171,6 +171,10 @@ normal_enabled = true
 normal_texture = ExtResource("17_t3whj")
 uv1_triplanar = true
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_d8kwi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7tqg7"]
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_nsp0x"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_qq3cc"]
@@ -244,7 +248,7 @@ mesh = SubResource("PlaneMesh_y000s")
 surface_material_override/0 = SubResource("StandardMaterial3D_7luux")
 
 [node name="PlayerScene" parent="." instance=ExtResource("1_agp6n")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 51.974, 16.294, -68.3956)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 51.974, 16.294, -80.4024)
 
 [node name="door_gate_gltf2" parent="." instance=ExtResource("4_gljdb")]
 transform = Transform3D(1.5, 0, 0, 0, 2, 0, 0, 0, 1.5, 31.7509, 0.772996, -6.57719)
@@ -1026,9 +1030,25 @@ surface_material_override/0 = SubResource("StandardMaterial3D_mo20b")
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 54.1386, 10.7226, -116.306)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="MurStreet9"]
+transform = Transform3D(6, 0, 0, 0, 5, 0, 0, 0, 0.5, -36.7588, 7.95806, -19.7324)
+mesh = SubResource("BoxMesh_vxsip")
+surface_material_override/0 = SubResource("StandardMaterial3D_mo20b")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MurStreet9"]
+transform = Transform3D(7, 0, 0, 0, 8, 0, 0, 0, 0.5, -38.5508, 9.40379, -20.3792)
+shape = SubResource("BoxShape3D_d8kwi")
+
+[node name="MurStreet10" type="StaticBody3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -38.9795, 10.7189, -83.1977)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MurStreet10"]
 transform = Transform3D(6, 0, 0, 0, 5, 0, 0, 0, 0.5, -36.7588, 7.92518, -19.7324)
 mesh = SubResource("BoxMesh_vxsip")
 surface_material_override/0 = SubResource("StandardMaterial3D_mo20b")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MurStreet10"]
+transform = Transform3D(6, 0, 0, 0, 8, 0, 0, 0, 0.5, -36.9054, 5.81638, -19.818)
+shape = SubResource("BoxShape3D_7tqg7")
 
 [node name="MurStreet2" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.071, 10.7226, 0)
