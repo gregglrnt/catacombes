@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=3 uid="uid://tp520khi4le5"]
+[gd_scene load_steps=95 format=3 uid="uid://tp520khi4le5"]
 
 [ext_resource type="PackedScene" uid="uid://3inn2imk6ytt" path="res://player.tscn" id="1_agp6n"]
 [ext_resource type="Texture2D" uid="uid://3o0nfp27yhmk" path="res://textures/Ground029.png" id="1_dugmc"]
@@ -81,6 +81,8 @@ uv1_triplanar = true
 [sub_resource type="BoxShape3D" id="BoxShape3D_yblv8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2c2o8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r7ls8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_il3hg"]
 
@@ -356,6 +358,10 @@ transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 25.7976, -0.713674, -6.4933
 [node name="wall_gltf66" parent="." instance=ExtResource("6_d1a4r")]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 32.7297, -0.713674, -24.7939)
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wall_gltf66"]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 1.5, -0.402954, 0, 0)
+shape = SubResource("BoxShape3D_r7ls8")
+
 [node name="wall_gltf68" parent="." instance=ExtResource("6_d1a4r")]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 28.9212, -0.713674, -24.7939)
 
@@ -553,7 +559,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, 30.9
 transform = Transform3D(1, 0, -3.55271e-15, 0, 1, 0, 3.55271e-15, 0, 1, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D43"]
-transform = Transform3D(15, 0, -2.13163e-14, 0, 8, 0, 2.27374e-13, 0, 1.5, 5.17081, 0, 0)
+transform = Transform3D(15, 0, -3.55271e-14, 0, 8, 0, 3.41061e-13, 0, 1.5, 5.00357, 0, 0)
 shape = SubResource("BoxShape3D_uawem")
 
 [node name="wall_gltf63" parent="." instance=ExtResource("6_d1a4r")]
@@ -744,7 +750,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, 27.6
 transform = Transform3D(1, 0, -3.55271e-15, 0, 1, 0, 3.55271e-15, 0, 1, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D44"]
-transform = Transform3D(5, 0, -6.39488e-14, 0, 8, 0, 1.84741e-13, 0, 1.5, 0.776184, 0, -0.00850677)
+transform = Transform3D(5, 0, -7.81597e-14, 0, 8, 0, 2.13163e-13, 0, 1.5, -0.324123, 0, -0.00850677)
 shape = SubResource("BoxShape3D_gp2m0")
 
 [node name="StaticBody3D6" type="StaticBody3D" parent="."]
