@@ -69,6 +69,8 @@ normal_enabled = true
 normal_texture = ExtResource("5_wll2g")
 uv1_scale = Vector3(0.5, 0.5, 0.5)
 uv1_triplanar = true
+[sub_resource type="BoxShape3D" id="BoxShape3D_tqw61"]
+size = Vector3(2.97353, 3.048, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_veh4n"]
 
@@ -204,6 +206,34 @@ albedo_texture = ExtResource("28_bmu7b")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_815m1"]
 
+[sub_resource type="Curve3D" id="Curve3D_bof5v"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.183867, 0, 15.2851, 0, 0, 0, 0, 0, 0, -1.78528, 0, 10.7822, 0, 0, 0, 0, 0, 0, 3.87517, 0, 10.5285, 0, 0, 0, 0, 0, 0, -0.183867, 0, 15.2851),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="Curve3D" id="Curve3D_sqmn1"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 7.97368, 0, 30.779, 0, 0, 0, 0, 0, 0, 21.0522, 0, 30.1937, 0, 0, 0, 0, 0, 0, 20.1376, 0, 25.4379, 0, 0, 0, 0, 0, 0, 6.96764, 0, 25.9135, 0, 0, 0, 0, 0, 0, 7.97368, 0, 30.779),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[sub_resource type="Curve3D" id="Curve3D_qmrva"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 22.1626, 0, 12.624, 0, 0, 0, 0, 0, 0, 34.1846, 0, 12.2095, 0, 0, 0, 0, 0, 0, 33.2634, 0, 9.58398, 0, 0, 0, 0, 0, 0, 14.7007, 0, 10.367, 0, 0, 0, 0, 0, 0, 15.0231, 0, 20.4545, 0, 0, 0, 0, 0, 0, 35.1519, 0, 18.9805, 0, 0, 0, 0, 0, 0, 17.971, 0, 16.2629, 0, 0, 0, 0, 0, 0, 22.1626, 0, 12.624),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 8
+
+[sub_resource type="Curve3D" id="Curve3D_fpmll"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 21.8502, 0, -1.25578, 0, 0, 0, 0, 0, 0, 22.8954, 0, 5.96103, 0, 0, 0, 0, 0, 0, 34.0939, 0, 4.54255, 0, 0, 0, 0, 0, 0, 32.6256, 0, -3.96831, 0, 0, 0, 0, 0, 0, 14.6583, 0, -4.1425, 0, 0, 0, 0, 0, 0, 21.8502, 0, -1.25578),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
+}
+point_count = 6
+
 [node name="Level" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -245,7 +275,16 @@ mesh = SubResource("PlaneMesh_y000s")
 surface_material_override/0 = SubResource("StandardMaterial3D_7luux")
 
 [node name="PlayerScene" parent="." instance=ExtResource("1_agp6n")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 33.6936, 1.09667, -22.7018)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.73907, 16.354, -36.6224)
+
+[node name="DoorNode" parent="." instance=ExtResource("4_gljdb")]
+transform = Transform3D(1.5, 0, 0, 0, 2, 0, 0, 0, 1.5, 2.36734, 0.772996, 0.713814)
+
+[node name="Door" type="RigidBody3D" parent="DoorNode"]
+
+[node name="DoorCollision" type="CollisionShape3D" parent="DoorNode/Door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.739363, 0, 0)
+shape = SubResource("BoxShape3D_tqw61")
 
 [node name="door_gate_gltf2" parent="." instance=ExtResource("4_gljdb")]
 transform = Transform3D(1.5, 0, 0, 0, 2, 0, 0, 0, 1.5, 31.7509, 0.772996, -6.57719)
@@ -795,12 +834,12 @@ shape = SubResource("BoxShape3D_j6yh2")
 [node name="door_gltf" parent="." instance=ExtResource("7_1uprs")]
 transform = Transform3D(2.2, 0, 0, 0, 2.5, 0, 0, 0, 1.5, 23.82, 0.276976, 23.033)
 
-[node name="StaticBody3D45" type="StaticBody3D" parent="."]
+[node name="Box" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.95945, 0.216846, -11.7435)
 
-[node name="table_small_decorated_A_gltf" parent="StaticBody3D45" instance=ExtResource("8_181if")]
+[node name="table_small_decorated_A_gltf" parent="Box" instance=ExtResource("8_181if")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D45"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box"]
 transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_74m5t")
 
@@ -854,18 +893,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.2858, 5.26485, -6.43679)
 
 [node name="wallSingle_door_gltf" parent="." instance=ExtResource("10_bv78a")]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 4.86449, 16.2325, -31.1434)
-
-[node name="EnemyScene" parent="." instance=ExtResource("10_o8rug")]
-transform = Transform3D(-0.999838, 0, -0.0180107, 0, 1, 0, 0.0180107, 0, -0.999838, 0, 0, 14.9217)
-
-[node name="EnemyScene2" parent="." instance=ExtResource("10_o8rug")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.03053, 0, 30.4393)
-
-[node name="EnemyScene3" parent="." instance=ExtResource("10_o8rug")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 21.9689, 0, 12.5138)
-
-[node name="EnemyScene4" parent="." instance=ExtResource("10_o8rug")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.9689, 0, -1.48928)
 
 [node name="Stairs1" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.60404, -0.085022, -11.3376)
@@ -1165,3 +1192,43 @@ script = ExtResource("32_x44kn")
 
 [connection signal="body_entered" from="Tresor/Coins" to="Tresor/Coins" method="_on_body_entered_treasure"]
 [connection signal="treasureCollected" from="Tresor/Coins" to="Control/Counter" method="_on_treasure_collected"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MurStreet4"]
+transform = Transform3D(10, 0, 0, 0, 8, 0, 0, 0, 0.5, -35.2105, 9.31884, -30.7247)
+mesh = SubResource("BoxMesh_vxsip")
+surface_material_override/0 = SubResource("StandardMaterial3D_mo20b")
+
+[node name="Enemy1" type="Path3D" parent="."]
+curve = SubResource("Curve3D_bof5v")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Enemy1"]
+transform = Transform3D(0.942189, 0, 0.33508, 0, 1, 0, -0.33508, 0, 0.942189, -0.183867, 0, 15.2851)
+
+[node name="EnemyScene" parent="Enemy1/PathFollow3D" instance=ExtResource("10_o8rug")]
+transform = Transform3D(-0.999838, 0, -0.0180107, 0, 1, 0, 0.0180107, 0, -0.999838, 0, 0, 0)
+
+[node name="Enemy2" type="Path3D" parent="."]
+curve = SubResource("Curve3D_sqmn1")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Enemy2"]
+transform = Transform3D(0.0447078, 0, -0.998997, 0, 1, 0, 0.998997, 0, 0.0447078, 7.97368, 0, 30.779)
+
+[node name="EnemyScene2" parent="Enemy2/PathFollow3D" instance=ExtResource("10_o8rug")]
+transform = Transform3D(-0.999994, 0, 0.00354292, 0, 1, 0, -0.00354292, 0, -0.999994, 0, 0, 0)
+
+[node name="Enemy3" type="Path3D" parent="."]
+curve = SubResource("Curve3D_qmrva")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Enemy3"]
+transform = Transform3D(0.034458, 0, -0.999406, 0, 1, 0, 0.999406, 0, 0.034458, 22.1626, 0, 12.624)
+
+[node name="EnemyScene3" parent="Enemy3/PathFollow3D" instance=ExtResource("10_o8rug")]
+transform = Transform3D(-0.999867, 0, -0.0163006, 0, 1, 0, 0.0163006, 0, -0.999867, 0, 0, 0)
+
+[node name="Enemy4" type="Path3D" parent="."]
+curve = SubResource("Curve3D_fpmll")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Enemy4"]
+transform = Transform3D(-0.989675, 0, -0.143333, 0, 1, 0, 0.143333, 0, -0.989675, 21.8502, 0, -1.25578)
+
+[node name="EnemyScene4" parent="Enemy4/PathFollow3D" instance=ExtResource("10_o8rug")]
+transform = Transform3D(-0.999846, 0, -0.0175745, 0, 1, 0, 0.0175745, 0, -0.999846, 0, 0, 0)
