@@ -23,14 +23,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.442354, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.31148, 0.45747)
 shape = SubResource("BoxShape3D_nd6wn")
 
-[node name="RayCast3D" type="RayCast3D" parent="Enemy"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.192399, 1.85485, 0)
-target_position = Vector3(0, -1, 100)
-script = ExtResource("3_732kj")
-
 [node name="Node3D" type="Node3D" parent="Enemy"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.12924, 0)
 
 [node name="Target" parent="Enemy" instance=ExtResource("4_iaw2i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.07, 0)
 visible = false
+
+[node name="RayCast3D" type="RayCast3D" parent="Enemy"]
+transform = Transform3D(1, 0, 0, 0, -0.0135434, -0.999908, 0, 0.999908, -0.0135434, 0.297033, 1.84103, 0.50074)
+target_position = Vector3(0, 19, 0)
+hit_from_inside = true
+script = ExtResource("3_732kj")
