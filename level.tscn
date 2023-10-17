@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=3 uid="uid://tp520khi4le5"]
+[gd_scene load_steps=102 format=3 uid="uid://tp520khi4le5"]
 
 [ext_resource type="PackedScene" uid="uid://3inn2imk6ytt" path="res://player.tscn" id="1_agp6n"]
 [ext_resource type="Texture2D" uid="uid://3o0nfp27yhmk" path="res://textures/Ground029.png" id="1_dugmc"]
@@ -26,7 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://cp3r4gchpfn5j" path="res://assets/chair_dungeon_texture.png" id="26_watc1"]
 [ext_resource type="ArrayMesh" uid="uid://djjad7xb8k3rd" path="res://assets/table_long_decorated_C.obj" id="27_fxm7r"]
 [ext_resource type="Texture2D" uid="uid://lnlgsogib68y" path="res://assets/table_long_decorated_C_dungeon_texture.png" id="28_bmu7b"]
-[ext_resource type="PackedScene" uid="uid://2e1notbxowke" path="res://coins.tscn" id="29_8187o"]
+[ext_resource type="PackedScene" path="res://coins.tscn" id="29_8187o"]
 [ext_resource type="Texture2D" uid="uid://cwywxjrxkx8sy" path="res://assets/coins.png" id="30_v2kqp"]
 [ext_resource type="FontFile" uid="uid://bxgqb4amuki4v" path="res://fonts/Anarchist Mustache.ttf" id="31_yof04"]
 [ext_resource type="Script" path="res://scripts/Counter.gd" id="32_x44kn"]
@@ -69,6 +69,7 @@ normal_enabled = true
 normal_texture = ExtResource("5_wll2g")
 uv1_scale = Vector3(0.5, 0.5, 0.5)
 uv1_triplanar = true
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_tqw61"]
 size = Vector3(2.97353, 3.048, 1)
 
@@ -1114,6 +1115,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.9997, 10.7226, 0)
 
 [node name="Node3D" type="Node3D" parent="MurStreet4"]
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MurStreet4"]
+transform = Transform3D(10, 0, 0, 0, 8, 0, 0, 0, 0.5, -35.2105, 9.31884, -30.7247)
+mesh = SubResource("BoxMesh_vxsip")
+surface_material_override/0 = SubResource("StandardMaterial3D_mo20b")
+
 [node name="Ground4" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.231, 10.4817, -63.6348)
 
@@ -1190,13 +1196,6 @@ theme_override_font_sizes/font_size = 150
 text = "0"
 script = ExtResource("32_x44kn")
 
-[connection signal="body_entered" from="Tresor/Coins" to="Tresor/Coins" method="_on_body_entered_treasure"]
-[connection signal="treasureCollected" from="Tresor/Coins" to="Control/Counter" method="_on_treasure_collected"]
-[node name="MeshInstance3D" type="MeshInstance3D" parent="MurStreet4"]
-transform = Transform3D(10, 0, 0, 0, 8, 0, 0, 0, 0.5, -35.2105, 9.31884, -30.7247)
-mesh = SubResource("BoxMesh_vxsip")
-surface_material_override/0 = SubResource("StandardMaterial3D_mo20b")
-
 [node name="Enemy1" type="Path3D" parent="."]
 curve = SubResource("Curve3D_bof5v")
 
@@ -1232,3 +1231,6 @@ transform = Transform3D(-0.989675, 0, -0.143333, 0, 1, 0, 0.143333, 0, -0.989675
 
 [node name="EnemyScene4" parent="Enemy4/PathFollow3D" instance=ExtResource("10_o8rug")]
 transform = Transform3D(-0.999846, 0, -0.0175745, 0, 1, 0, 0.0175745, 0, -0.999846, 0, 0, 0)
+
+[connection signal="body_entered" from="Tresor/Coins" to="Tresor/Coins" method="_on_body_entered_treasure"]
+[connection signal="treasureCollected" from="Tresor/Coins" to="Control/Counter" method="_on_treasure_collected"]
