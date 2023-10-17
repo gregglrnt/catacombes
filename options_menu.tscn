@@ -1,0 +1,121 @@
+[gd_scene load_steps=5 format=3 uid="uid://yqnpcqfinq7h"]
+
+[ext_resource type="FontFile" uid="uid://bxgqb4amuki4v" path="res://fonts/Anarchist Mustache.ttf" id="1_mk1xv"]
+[ext_resource type="FontFile" uid="uid://cvrwrs3wymb8o" path="res://fonts/GoddessSymbols.ttf" id="2_8wbhm"]
+[ext_resource type="Script" path="res://scripts/options_menu.gd" id="3_xltxn"]
+[ext_resource type="AudioStream" uid="uid://bfhvfc2ij4lew" path="res://TPR - Dark Caverns (dungeon theme) - A Piano Tribute To Octopath Traveler.mp3" id="4_5yjsk"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -7.0
+offset_top = -36.0
+offset_right = 1912.0
+offset_bottom = 1040.0
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 152.0
+offset_right = 1918.0
+offset_bottom = 209.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_mk1xv")
+theme_override_font_sizes/font_size = 53
+text = "Infiltrer le groupe le plus mystérieux de Paris dans"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 222.0
+offset_right = 1918.0
+offset_bottom = 356.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_mk1xv")
+theme_override_font_sizes/font_size = 68
+text = "CATACOMBES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 610.0
+offset_top = 227.0
+offset_right = 687.0
+offset_bottom = 339.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_8wbhm")
+theme_override_font_sizes/font_size = 68
+text = "O"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 1221.0
+offset_top = 233.0
+offset_right = 1302.0
+offset_bottom = 340.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_8wbhm")
+theme_override_font_sizes/font_size = 68
+text = "O"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="volumeButton" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_top = 420.0
+offset_right = 1920.0
+offset_bottom = 507.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_mk1xv")
+theme_override_font_sizes/font_size = 78
+text = "VOLUME"
+flat = true
+script = ExtResource("3_xltxn")
+
+[node name="aideButton" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 536.0
+offset_right = 1923.0
+offset_bottom = 623.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_mk1xv")
+theme_override_font_sizes/font_size = 78
+text = "AIDE"
+flat = true
+script = ExtResource("3_xltxn")
+
+[node name="retourButton" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 649.0
+offset_right = 1922.0
+offset_bottom = 736.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_mk1xv")
+theme_override_font_sizes/font_size = 78
+text = "RETOUR"
+flat = true
+script = ExtResource("3_xltxn")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_5yjsk")
+autoplay = true
+
+[connection signal="pressed" from="ColorRect/aideButton" to="ColorRect/aideButton" method="_on_aideButton_pressed"]
+[connection signal="pressed" from="ColorRect/retourButton" to="ColorRect/retourButton" method="_on_retour_pressed"]

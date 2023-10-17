@@ -1,0 +1,128 @@
+[gd_scene load_steps=9 format=3 uid="uid://3inn2imk6ytt"]
+
+[ext_resource type="PackedScene" uid="uid://drg66phrnq4jy" path="res://assets/Casual_Male.gltf" id="2_s5tta"]
+[ext_resource type="Script" path="res://scripts/CameraFollow.gd" id="3_p77my"]
+[ext_resource type="PackedScene" uid="uid://dda4o20wvf37l" path="res://pause_menu.tscn" id="4_qh65u"]
+
+[sub_resource type="GDScript" id="GDScript_s0ecp"]
+script/source = "extends CharacterBody3D
+
+
+@export var speed = 10
+@export var fall_acceleration = 75
+@export var jump_impulse = 20
+@export var dead = false
+
+var target_velocity = Vector3.ZERO
+@onready var animation = $Pivot/Casual_Male/AnimationPlayer
+
+
+func _physics_process(delta):
+	if dead: 
+		animation.play(\"Defeat\")
+		return
+
+	var direction = Vector3.ZERO
+	if Input.is_action_pressed(\"move_left\") and Input.is_action_pressed(\"move_right\"):
+		direction.x += 0;
+	elif Input.is_action_pressed(\"move_left\"):
+		direction.x += 1
+	elif Input.is_action_pressed(\"move_right\"):
+		direction.x -= 1
+	if Input.is_action_pressed(\"move_forward\"):
+		direction.z += 1
+	if Input.is_action_pressed(\"move_back\"):
+		direction.z -= 1
+	if is_on_floor() and Input.is_action_pressed(\"jump\"):
+		target_velocity.y = jump_impulse
+		animation.play(\"Jump\")
+
+	if direction != Vector3.ZERO:
+		direction = direction.normalized()
+		$Pivot.look_at(position - direction, Vector3.UP)
+		animation.play(\"Run\")
+
+	if velocity == Vector3.ZERO :
+		animation.play(\"Idle\")
+
+	# Ground Velocity
+	target_velocity.x = direction.x * speed
+	target_velocity.z = direction.z * speed
+		
+
+	# Vertical Velocity
+	if not is_on_floor(): # If in the air, fall towards the floor. Literally gravity
+		target_velocity.y = target_velocity.y - (fall_acceleration * delta)
+
+	# Moving the Character
+	velocity = target_velocity
+	move_and_slide()
+"
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_x2of2"]
+radius = 1.5
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_aunfs"]
+sky_top_color = Color(0.235294, 0.364706, 0.964706, 1)
+sky_horizon_color = Color(0.2, 0.694118, 1, 1)
+
+[sub_resource type="Sky" id="Sky_t2bk2"]
+sky_material = SubResource("ProceduralSkyMaterial_aunfs")
+
+[sub_resource type="Environment" id="Environment_o57qt"]
+background_mode = 2
+sky = SubResource("Sky_t2bk2")
+
+[node name="PlayerScene" type="Node3D"]
+
+[node name="Player" type="CharacterBody3D" parent="."]
+script = SubResource("GDScript_s0ecp")
+
+[node name="Pivot" type="Node3D" parent="Player"]
+
+[node name="Casual_Male" parent="Player/Pivot" instance=ExtResource("2_s5tta")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.424316, -0.361495, -0.39744)
+
+[node name="Skeleton3D" parent="Player/Pivot/Casual_Male/CharacterArmature" index="0"]
+bones/1/position = Vector3(0.265425, 0.0246629, -0.0450554)
+bones/1/rotation = Quaternion(5.19753e-06, 0.702952, 0.711237, 5.33237e-06)
+bones/2/position = Vector3(-0.00298551, 0.969529, 0.0923729)
+bones/2/rotation = Quaternion(-0.000517528, 0.003643, 2.44276e-05, 0.999993)
+bones/4/rotation = Quaternion(0.0746338, 4.36662e-07, 4.61655e-08, 0.997211)
+bones/5/rotation = Quaternion(0.0827185, -8.29322e-07, 1.8509e-08, 0.996573)
+bones/6/rotation = Quaternion(-0.0319923, 2.40947e-05, 0.000139212, 0.999488)
+bones/7/rotation = Quaternion(-0.115399, 0.000149488, 5.67306e-06, 0.993319)
+bones/8/position = Vector3(0.126103, 0.141339, 0.0134577)
+bones/9/rotation = Quaternion(-0.502721, -0.401091, -0.606157, 0.467944)
+bones/10/rotation = Quaternion(-0.193718, -0.074229, -0.29745, 0.931926)
+bones/12/position = Vector3(-0.124826, 0.141339, 0.0134578)
+bones/13/rotation = Quaternion(-0.53614, 0.417335, 0.600951, 0.421003)
+bones/14/rotation = Quaternion(-0.196769, -0.036595, 0.056219, 0.978153)
+bones/15/rotation = Quaternion(0.0125379, -0.0181952, 0.00654308, 0.999735)
+bones/16/position = Vector3(0.253029, -0.0167021, -0.0559237)
+bones/16/rotation = Quaternion(0.991675, 0.0121765, 0.00577464, 0.128062)
+bones/16/scale = Vector3(0.999998, 0.999997, 0.99995)
+bones/17/rotation = Quaternion(0.307924, 0.00332023, 0.00925235, 0.95136)
+bones/17/scale = Vector3(1, 1.00001, 1.00001)
+bones/18/position = Vector3(-0.254712, -0.0167021, -0.0559241)
+bones/18/rotation = Quaternion(0.992038, -0.00717392, 0.00195197, 0.125719)
+bones/18/scale = Vector3(0.999998, 0.999997, 0.999951)
+bones/19/rotation = Quaternion(0.307379, -0.00331488, -0.00925426, 0.951537)
+bones/19/scale = Vector3(1, 1.00001, 1.00001)
+bones/20/position = Vector3(0.261994, 0.109748, 1.85164)
+bones/21/position = Vector3(-0.262802, 0.0246629, -0.0450557)
+bones/21/rotation = Quaternion(-5.64915e-06, 0.702952, 0.711237, -4.99718e-06)
+bones/22/position = Vector3(-0.259374, 0.109748, 1.85164)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.749381, 1.27287, -0.410356)
+shape = SubResource("SphereShape3D_x2of2")
+
+[node name="Camera3D" type="Camera3D" parent="Player"]
+transform = Transform3D(-0.996585, -0.016362, 0.0809383, 0.0183387, 0.911841, 0.410134, -0.0805135, 0.410218, -0.908427, -0.440702, 3.95812, -3.25577)
+environment = SubResource("Environment_o57qt")
+script = ExtResource("3_p77my")
+
+[node name="PauseMenu" parent="." instance=ExtResource("4_qh65u")]
+
+[editable path="Player/Pivot/Casual_Male"]
