@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://3inn2imk6ytt"]
 
-[ext_resource type="Script" path="res://scripts/Player.gd" id="1_llgqn"]
+[ext_resource type="Script" path="res://Player.gd" id="1_6kcrr"]
 [ext_resource type="PackedScene" uid="uid://drg66phrnq4jy" path="res://assets/Casual_Male.gltf" id="2_s5tta"]
 [ext_resource type="PackedScene" uid="uid://dda4o20wvf37l" path="res://pause_menu.tscn" id="4_qh65u"]
 
@@ -9,7 +9,7 @@
 [node name="PlayerScene" type="Node3D"]
 
 [node name="Player" type="CharacterBody3D" parent="."]
-script = ExtResource("1_llgqn")
+script = ExtResource("1_6kcrr")
 
 [node name="Pivot" type="Node3D" parent="Player"]
 

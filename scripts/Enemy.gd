@@ -10,7 +10,9 @@ func _physics_process(delta):
 
 	if(pathFollow.progress_ratio <= 1):
 		pathFollow.progress += move_speed * delta
-		$Pivot/CultMember/AnimationPlayer.play("Walk")
+		$Pivot/CultMember/AnimationPlayer.play("Walk");
+		$AudioStreamPlayer3D.play()
+		
 	else: 
 		$Pivot/CultMember/AnimationPlayer.play("Idle");
 	
